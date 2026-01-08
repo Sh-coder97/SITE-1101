@@ -996,3 +996,17 @@ body {
   font-size: 20.5px;   /* 🔥 AZCA böyüdülmüş */
   line-height: 1.65;   /* 🔥 daha sıx, clean */
 }
+.navbar-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;     /* 🔥 BU ƏSASDIR */
+}
+@media (max-width: 768px) {
+  .nav-pill {
+    padding: 8px 14px;
+    font-size: 14px;
+  }
+}
+body {
+  overflow-x: hidden;
+}
