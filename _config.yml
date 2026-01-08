@@ -2,7 +2,7 @@ title: My Jekyll Site
 email: your-email@example.com
 description: >-
   A simple Jekyll site scaffolded for you
-baseurl: ""
-url: "http://example.com"
+baseurl: "/SITE-1101"
+url: "https://github.com/Sh-coder97/SITE-1101"
 
 plugins: []
