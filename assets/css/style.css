@@ -1,13 +1,17 @@
 :root {
-  --bg-main: #c9d7ea;        /* 🔥 fon – aydın şəkildə tünd */
-  --card-bg: #b8cbe4;        /* 🔥 kartlar – fonun üstündə seçilir */
-  --border-line: #9fb6d6;    /* navbar xətti – artıq daha görünən */
-  --text-main: #142033;      /* text – tünd navy */
-  --accent: #1d4ed8;         /* 🔥 əsas mavi (çox tünd) */
-  --accent-soft: rgba(29,78,216,0.25);
-  --accent-hover: rgba(29,78,216,0.5);
-}
+  /* ===== MAIN BACKGROUNDS ===== */
+  --bg-main: #e2d6c8;        /* əsas fon – tünd açıq qəhvəyi */
+  --card-bg: #d4c2ae;        /* kartlar – daha tünd */
+  --border-line: #b9a58f;    /* navbar/footer xətti */
 
+  /* ===== TEXT ===== */
+  --text-main: #2f241c;      /* tünd qəhvəyi text */
+
+  /* ===== ACCENT ===== */
+  --accent: #9c6b43;         /* tünd qəhvəyi accent */
+  --accent-soft: rgba(156,107,67,0.25);
+  --accent-hover: rgba(156,107,67,0.45);
+}
 
 
 /* ================= RESET & BASE ================= */
@@ -205,7 +209,7 @@ body {
 .project-card p,
 .contact-card p {
   margin: 0;
-  font-size: 17px;
+  font-size: 19px;
   line-height: 1.6;
 }
 
@@ -973,4 +977,22 @@ body {
 .footer-separator {
   color: var(--text-main);
 }
- 
+ /* ================= STICKY NAVBAR FIX ================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+
+  /* 🔥 ŞƏFFAFLIQ GETDİ */
+  background: var(--bg-main);
+
+  /* 🔥 YAZILARIN ÜSTÜNƏ DÜŞMƏSİN */
+  border-bottom: 1px solid var(--border-line);
+
+  /* 🔥 AYRILMA HİSSİ */
+  box-shadow: 0 6px 18px rgba(47,36,28,0.15);
+}
+.about-text-large {
+  font-size: 20.5px;   /* 🔥 AZCA böyüdülmüş */
+  line-height: 1.65;   /* 🔥 daha sıx, clean */
+}
