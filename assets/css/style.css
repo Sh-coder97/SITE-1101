@@ -1023,3 +1023,23 @@ body {
 body {
   overflow-x: hidden;
 }
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;   /* 🔥 ALT-ALTA */
+    align-items: center;      /* 🔥 ORTA */
+    gap: 10px;
+  }
+
+  .navbar-brand {
+    text-align: center;
+    width: 100%;
+  }
+
+}
+@media (max-width: 768px) {
+  .navbar h1 {
+    text-align: center;
+    margin: 0;
+  }
+}
