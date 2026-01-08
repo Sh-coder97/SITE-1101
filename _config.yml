@@ -1,0 +1,8 @@
+title: My Jekyll Site
+email: your-email@example.com
+description: >-
+  A simple Jekyll site scaffolded for you
+baseurl: ""
+url: "http://example.com"
+
+plugins: []

@@ -1,0 +1,975 @@
+:root {
+  --bg-main: #c9d7ea;        /* 🔥 fon – aydın şəkildə tünd */
+  --card-bg: #b8cbe4;        /* 🔥 kartlar – fonun üstündə seçilir */
+  --border-line: #9fb6d6;    /* navbar xətti – artıq daha görünən */
+  --text-main: #142033;      /* text – tünd navy */
+  --accent: #1d4ed8;         /* 🔥 əsas mavi (çox tünd) */
+  --accent-soft: rgba(29,78,216,0.25);
+  --accent-hover: rgba(29,78,216,0.5);
+}
+
+
+
+/* ================= RESET & BASE ================= */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
+
+
+
+/* ================= PAGE LAYOUT ================= */
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-content {
+  flex: 1;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 18px 40px;
+
+  background: transparent;          /* ❌ qara yox */
+  border-bottom: 1px solid #d6c7b8;  /* 🔥 tək xətt */
+
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+
+.brand-name {
+  color: #3b2f2f;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.brand-name:hover {
+  transform: translateY(-4px);
+  text-shadow: 0 0 10px rgba(120,180,255,0.8);
+}
+
+.nav-center {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-pill {
+  background: transparent;
+  color: #3b2f2f;
+
+  padding: 10px 18px;
+  border-radius: 999px;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  transition: 0.25s ease;
+}
+
+.nav-pill:hover {
+  background: rgba(176, 137, 104, 0.18);  /* qəhvəyi hover */
+}
+
+
+/* ================= HOME HERO ================= */
+.home-hero {
+  min-height: calc(100vh - 160px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-card {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  padding: 90px 150px;
+  background: #e0e0e0;
+  border-radius: 999px;
+  transition: 0.4s ease;
+}
+
+.hero-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.25);
+}
+
+.hero-name {
+  font-size: 48px;
+  font-weight: 800;
+  margin: 0;
+}
+
+.hero-subtitle {
+  font-size: 30px;
+  margin-top: 20px;
+}
+
+.hero-name:hover,
+.hero-subtitle:hover {
+  transform: translateY(-4px);
+  text-shadow: 0 0 14px rgba(120,180,255,0.85);
+}
+
+.hero-image img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #fff;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
+
+
+.hero-buttons {
+  margin-top: 26px;
+  display: flex;
+  gap: 16px;
+}
+
+.hero-btn {
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.08);
+  color: #000;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: rgba(120,180,255,0.25);
+  box-shadow:
+    0 10px 25px rgba(120,180,255,0.45),
+    0 0 12px rgba(120,180,255,0.6);
+}
+
+/* ================= SECTIONS (ABOUT / PROJECT / CONTACT) ================= */
+.about-section,
+.projects-section,
+.contact-section {
+  max-width: 1100px;
+  margin: 80px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.about-card,
+.project-card,
+.contact-card {
+  background: #e0e0e0;
+  padding: 50px 80px;
+  border-radius: 999px;
+  transition: 0.35s ease;
+}
+
+.about-card:hover,
+.project-card:hover,
+.contact-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+}
+
+.about-card h2,
+.project-card h2,
+.contact-card h2 {
+  margin: 0 0 14px;
+  font-size: 28px;
+}
+
+.about-card p,
+.project-card p,
+.contact-card p {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* ================= PROJECT WITH IMAGE ================= */
+.project-with-image {
+  display: flex;
+  align-items: center;
+  gap: 60px; /* oval qalır, amma image üçün real */
+}
+
+.project-text {
+  flex: 1;
+  max-width: 620px;
+}
+
+.project-actions {
+  margin-top: 26px;
+}
+
+.project-btn {
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.08);
+  color: #000;
+  text-decoration: none;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.project-btn:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: rgba(120,180,255,0.25);
+  box-shadow:
+    0 10px 25px rgba(120,180,255,0.45),
+    0 0 12px rgba(120,180,255,0.6);
+}
+
+.project-image-frame {
+  width: 260px;
+  height: 180px;
+  background: #000;
+  padding: 4px;
+  border-radius: 16px;
+  flex-shrink: 0;
+}
+
+.project-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ================= CARD LINK ================= */
+.card-link {
+  display: inline-block;
+  margin-top: 18px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: rgba(0,0,0,0.08);
+  color: #000;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.card-link:hover {
+  transform: translateY(-4px) scale(1.05);
+  background: rgba(120,180,255,0.25);
+  box-shadow:
+    0 10px 25px rgba(120,180,255,0.45),
+    0 0 12px rgba(120,180,255,0.6);
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: #f0f0f0;
+  padding: 24px 20px;
+  text-align: center;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+}
+
+.footer-link {
+  color: #000;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.footer-link:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 0 10px rgba(120,180,255,0.8);
+}
+
+.footer-copy {
+  font-size: 14px;
+  color: #555;
+}
+
+/* ================= MOBILE ================= */
+
+.contact-card .nav-pill {
+  margin-top: 18px;
+  display: inline-block;
+}
+.contact-card h2,
+.contact-card p {
+  color: #000;
+}
+.contact-card .nav-pill {
+  background: rgba(0, 0, 0, 0.12);
+  color: #000;
+  font-weight: 500;
+  box-shadow:
+    0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.project-text p {
+  font-size: 16px;
+  line-height: 1.6;
+}
+.about-row {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.about-text {
+  flex: 1;
+}
+.about-image-frame {
+  width: 380px;
+  height: 290px;
+  background: #000;
+  padding: 5px;
+  border-radius: 18px;
+  flex-shrink: 0;
+}
+
+.about-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ================= CODECADEMY BUTTON FIX ================= */
+
+.codecademy-btn {
+  margin-top: 18px;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.12);
+  color: #000;
+  font-weight: 600;
+}
+
+.codecademy-btn:hover {
+  transform: translateY(-6px) scale(1.05);
+  background: rgba(120, 180, 255, 0.25);
+  box-shadow:
+    0 10px 25px rgba(120, 180, 255, 0.45),
+    0 0 12px rgba(120, 180, 255, 0.6);
+}
+/* ===== HARD OVERRIDE FOR CODECADEMY BUTTON ===== */
+
+.about-card a.nav-pill,
+.about-card a.codecademy-btn {
+  color: #000 !important;
+  background: rgba(0, 0, 0, 0.15) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  font-weight: 600;
+}
+
+.about-card a.nav-pill:hover,
+.about-card a.codecademy-btn:hover {
+  transform: translateY(-6px) scale(1.05);
+  background: rgba(120, 180, 255, 0.25) !important;
+  box-shadow:
+    0 10px 25px rgba(120, 180, 255, 0.45),
+    0 0 12px rgba(120, 180, 255, 0.6);
+}
+.contact-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.contact-text {
+  flex: 1;
+}
+
+.contact-icon-frame {
+  width: 100px;
+  height: 100px;
+  background: #000;
+  border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.contact-icon-frame img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+
+  /* 🔑 ƏN VACİB HİSSƏ */
+  filter: invert(1);
+}
+.contact-section {
+  max-width: 850px;   /* 🔥 əsas dəyişiklik */
+  margin: 80px auto;
+}
+.contact-card {
+  padding: 70px 60px;   /* əvvəl: 50px 80px */
+  border-radius: 999px;
+}
+.footer-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.footer-link {
+  color: #000;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+
+.footer-link:hover {
+  transform: translateY(-2px);
+  text-shadow: 0 0 10px rgba(120,180,255,0.8);
+}
+
+.footer-separator {
+  color: #888;
+}
+/* ================= MOBILE FIX – CRITICAL ================= */
+@media (max-width: 768px) {
+
+  /* HERO SECTION EKRANI DOLURSUN */
+  .home-hero {
+    min-height: 100vh;          /* 🔥 ekranı doldur */
+    padding: 24px 16px;
+    align-items: flex-start;    /* ⬅️ yuxarıdan başlasın */
+  }
+
+  /* HERO CARD DAHA BÖYÜK */
+  .hero-card {
+    width: 100%;
+    min-height: 85vh;           /* 🔥 kart böyük olsun */
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 48px 28px;         /* ⬅️ iç boşluq artsın */
+    border-radius: 40px;
+    gap: 32px;
+    text-align: center;
+  }
+
+  /* TEXT DAHA NƏFƏSLİ */
+  .hero-name {
+    font-size: 34px;
+  }
+
+  .hero-subtitle {
+    font-size: 18px;
+    line-height: 1.5;
+  }
+
+  /* BUTTONLAR AŞAĞIYA YAYILSIN */
+  .hero-buttons {
+    margin-top: 32px;
+    flex-direction: column;     /* 🔥 sənin saytdakı kimi */
+    gap: 16px;
+  }
+
+  .hero-btn {
+    width: 100%;
+    font-size: 16px;
+    padding: 14px 0;
+  }
+
+  /* ŞƏKİL AŞAĞIDA BÖYÜK DURSUN */
+  .hero-image img {
+    width: 220px;
+    height: 220px;
+  }
+}
+@media (max-width: 768px) {
+
+  /* ===== NAVBAR – DESKTOP KIMI ===== */
+  .navbar {
+    flex-direction: row;          /* 🔥 yan-yana */
+    justify-content: center;
+    align-items: center;
+    padding: 18px 16px;
+    gap: 14px;
+  }
+
+  .nav-center {
+    width: auto;                  /* ❌ full width YOX */
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 0;                /* ❌ alt-alta düşməsin */
+  }
+
+  .nav-pill {
+    font-size: 15px;              /* 🔥 desktopa yaxın */
+    padding: 12px 24px;           /* 🔥 həcimli */
+    border-radius: 999px;
+    white-space: nowrap;          /* 🔥 qırılmasın */
+  }
+}
+/* ===== HOME HERO – MOBILE FULL HEIGHT ===== */
+@media (max-width: 768px) {
+
+  .home-hero {
+    min-height: 100vh;
+    padding: 24px 16px 40px;
+    align-items: flex-start;
+  }
+
+  .hero-card {
+    width: 100%;
+    padding: 42px 26px 50px;
+    border-radius: 32px;
+  }
+
+  .hero-image img {
+    width: 180px;
+    height: 180px;
+  }
+}
+@media (max-width: 768px) {
+  .hero-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-image {
+    margin-top: 24px;
+  }
+}
+/* ================= NAVBAR – MOBILE FIX (FINAL) ================= */
+@media (max-width: 768px) {
+
+  .navbar {
+    flex-direction: column;          /* 🔥 üst + alt */
+    align-items: stretch;
+    padding: 14px 12px;              /* 🔥 dar */
+    gap: 12px;
+  }
+
+  /* NAME YUXARI SAGDA */
+  .nav-left {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .brand-name {
+    font-size: 18px;
+  }
+
+  /* BUTTONLAR ALTDA, YAN-YANA */
+  .nav-center {
+    display: flex;
+    justify-content: space-between;  /* 🔥 daşma YOX */
+    gap: 8px;
+    width: 100%;
+  }
+
+  .nav-pill {
+    flex: 1;                         /* 🔥 avtomatik sıxılır */
+    text-align: center;
+    padding: 12px 0;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+}
+/* ===== PROJECT CARD LIKE ABOUT ===== */
+
+.project-row {
+  display: flex;
+  align-items: center;
+  gap: 1000px;
+}
+
+.project-text {
+  flex: 1;
+}
+
+.project-image-frame {
+  width: 280px;
+  height: 190px;
+  background: #000;
+  padding: 5px;
+  border-radius: 18px;
+  flex-shrink: 0;
+}
+
+.project-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+@media (max-width: 768px) {
+
+  .project-row {
+    flex-direction: column;
+    text-align: center;
+    gap: 28px;
+  }
+
+  .project-image-frame {
+    width: 220px;
+    height: 150px;
+  }
+
+  .project-btn {
+    width: 100%;
+    padding: 14px 0;
+  }
+}
+/* ===== PROJECT = ABOUT TYPOGRAPHY ===== */
+
+.project-card h2 {
+  font-size: 28px;        /* About h2 ilə eyni */
+  margin-bottom: 14px;
+}
+
+.project-card p {
+  font-size: 17px;        /* About text ilə eyni */
+  line-height: 1.6;
+  max-width: 620px;
+}
+/* ===== BIGGER PROJECT CARDS ===== */
+
+.projects-section {
+  max-width: 1300px;   /* əvvəl 1100 idi */
+}
+
+/* Project kartı daha iri */
+.project-card {
+  padding: 80px 120px;     /* 🔥 əsas böyütmə */
+  border-radius: 999px;
+}
+
+/* Text daha geniş yayılsın */
+.project-card .about-text {
+  max-width: 700px;
+}
+
+/* Başlıq bir az da güclü */
+.project-card h2 {
+  font-size: 32px;
+  margin-bottom: 18px;
+}
+
+/* Text daha oxunaqlı */
+.project-card p {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+/* Şəkil bir az böyüsün */
+.project-card .about-image-frame {
+  width: 320px;
+  height: 220px;
+}
+@media (max-width: 768px) {
+
+  .project-card {
+    padding: 56px 28px;   /* mobil üçün böyük, amma daşmır */
+    border-radius: 40px;
+  }
+
+  .project-card h2 {
+    font-size: 28px;
+  }
+
+  .project-card p {
+    font-size: 17px;
+  }
+
+  .project-card .about-image-frame {
+    width: 240px;
+    height: 170px;
+  }
+}
+/* ===== FORCE PROJECT = ABOUT (MOBILE) ===== */
+@media (max-width: 768px) {
+
+  /* Project row'u tam sındır */
+  .project-card,
+  .project-with-image,
+  .project-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+
+  /* Text yuxarıda */
+  .project-text {
+    order: 1;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* Şəkil ALTDADIR */
+  .project-image-frame,
+  .hero-image {
+    order: 2;
+    margin-top: 32px;
+  }
+
+  /* Şəkil ölçüsü about kimi */
+  .project-image-frame,
+  .hero-image img {
+    width: 240px;
+    height: 240px;
+    border-radius: 50%;
+  }
+
+  /* Düymə şəkildən YUXARIDA qalsın */
+  .project-actions,
+  .hero-btn {
+    order: 1;
+    margin-top: 24px;
+  }
+}
+.project-card .hero-name {
+  margin-bottom: 28px;   /* bunu artır / azalt */
+}
+/* ================= MOBILE BUTTONS – DARKER ================= */
+@media (max-width: 768px) {
+
+  .hero-btn,
+  .project-btn,
+  .card-link,
+  .contact-card .nav-pill {
+    width: 100%;
+    display: block;
+    text-align: center;
+
+    padding: 16px 0;
+    font-size: 16px;
+    font-weight: 600;
+
+    margin-top: 20px;
+    border-radius: 18px;
+
+    /* 🔥 DAHA TÜND RƏNG */
+    background: rgba(0, 0, 0, 0.35);
+    color: #fff;
+
+    box-shadow:
+      0 10px 22px rgba(0,0,0,0.45);
+  }
+}
+/* ================= CONTACT CARD – MOBILE FIX ================= */
+@media (max-width: 768px) {
+
+  .contact-card {
+    border-radius: 32px;      /* ❌ dairə YOX */
+    padding: 42px 24px;       /* 🔥 rahat nəfəs */
+  }
+
+  .contact-row {
+    flex-direction: column;   /* 🔥 icon aşağı düşsün */
+    text-align: center;
+    gap: 28px;
+  }
+
+  .contact-icon-frame {
+    width: 80px;
+    height: 80px;
+  }
+}
+.project-card h2,
+.project-card .hero-name {
+  margin-bottom: 24px;   /* 🔥 daha nəfəsli */
+}
+.card-link {
+  margin-top: 28px;   /* əvvəl 18px idi */
+}
+.about-card .learn-more-btn {
+  margin-top: 32px;
+}
+@media (max-width: 768px) {
+  .learn-more-btn {
+    width: 100%;
+    text-align: center;
+    padding: 14px 0;
+  }
+}
+.project-card .hero-btn {
+  margin-top: 32px; /* 🔥 burada artır */
+}
+.hero-text .hero-btn {
+  margin-top: 28px;   /* azca aşağı salır */
+  display: inline-block;
+}
+@media (max-width: 768px) {
+
+  .nav-pill {
+    flex: 1;
+    padding: 14px 0;          /* 🔥 hündürlük artsın */
+    font-size: 15px;         /* 🔥 oxunaqlı */
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.14);  /* 🔥 daha görünən */
+    box-shadow:
+      0 6px 16px rgba(0,0,0,0.35),
+      inset 0 0 0 1px rgba(255,255,255,0.12);
+  }
+}
+@media (max-width: 768px) {
+
+  .navbar {
+    background: rgba(0,0,0,0.75);   /* 🔥 dərinlik */
+    backdrop-filter: blur(10px);   /* 🔥 glass effect */
+    box-shadow:
+      0 10px 30px rgba(0,0,0,0.6);
+  }
+}
+.nav-pill.active {
+  background: rgba(255,255,255,0.25);
+  box-shadow:
+    0 0 14px rgba(255,255,255,0.35);
+}
+/* ================= NAVBAR – MOBILE FINAL OVERRIDE ================= */
+@media (max-width: 768px) {
+
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    padding: 18px 14px;
+    gap: 14px;
+
+    background: rgba(0,0,0,0.85);
+    backdrop-filter: blur(12px);
+    box-shadow:
+      0 10px 30px rgba(0,0,0,0.6);
+  }
+
+  .nav-center {
+    display: flex;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .nav-pill {
+    flex: 1;
+    padding: 16px 0;
+    font-size: 16px;
+    font-weight: 600;
+
+    border-radius: 999px;
+    text-align: center;
+
+    background: rgba(255,255,255,0.18);
+    box-shadow:
+      0 8px 20px rgba(0,0,0,0.45),
+      inset 0 0 0 1px rgba(255,255,255,0.15);
+  }
+
+  .nav-pill.active {
+    background: rgba(255,255,255,0.32);
+    box-shadow:
+      0 0 16px rgba(255,255,255,0.45);
+  }
+}
+.hero-card,
+.about-card,
+.project-card,
+.contact-card {
+  background: var(--card-bg);
+  border-radius: 28px;   /* oval YOX */
+}
+
+.hero-card:hover,
+.about-card:hover,
+.project-card:hover,
+.contact-card:hover {
+  box-shadow: 0 18px 40px rgba(59,130,246,0.18);
+}
+
+.hero-btn,
+.project-btn,
+.card-link {
+  background: var(--accent-soft);
+  color: var(--text-main);
+  font-weight: 600;
+  border-radius: 14px;
+}
+
+.hero-btn:hover,
+.project-btn:hover,
+.card-link:hover {
+  background: var(--accent-hover);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    background: var(--bg-main);
+    border-bottom: 1px solid var(--border-line);
+  }
+
+  .nav-pill {
+    border-radius: 14px;
+  }
+}
+
+
+.navbar {
+  background: transparent;
+  border-bottom: 1px solid var(--border-line);
+  padding: 18px 40px;
+}
+
+.nav-pill {
+  background: var(--accent-soft);
+  color: var(--text-main);
+
+  padding: 10px 22px;
+  border-radius: 14px;     /* düzbucaqlı, yumşaq */
+  font-weight: 600;
+  font-size: 15px;
+
+  transition: 0.25s ease;
+}
+
+.nav-pill:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+}
+/* ===== REMOVE UNDERLINE FROM NAV LINKS ===== */
+.navbar a,
+.nav-pill {
+  text-decoration: none !important;
+}
+/* ===== FOOTER – SAME BLUE AS PAGE ===== */
+.footer {
+  background: var(--bg-main);      /* 🔥 eyni mavi */
+  border-top: 1px solid var(--border-line);
+}
+
+.footer-link,
+.footer-copy,
+.footer-separator {
+  color: var(--text-main);
+}
